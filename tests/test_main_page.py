@@ -1,6 +1,6 @@
 import pytest
 from pages.main_page import MainPage
-from locators.main_page_locators import MainPageLocators
+from data import url
 
 
 class TestMainPage:
@@ -18,4 +18,5 @@ class TestMainPage:
                              ])
     def test_answers_on_questions(self, driver, num, res):
         main_page = MainPage(driver)
+        main_page.driver.get(url["main_page"])
         assert main_page.get_answer_text(num) == res

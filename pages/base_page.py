@@ -19,6 +19,9 @@ class BasePage:
     def get_text_from_element(self, locator):
         return self.find_element_with_wait(locator).text
 
+    def get_current_url(self):
+        return self.driver.current_url
+
     def format_locators(self, locator_1, num):
         method, locator = locator_1
         locator = locator.format(num)

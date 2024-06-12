@@ -11,6 +11,5 @@ def driver():
     options.add_argument('--window-size=1920,1080')
     # options.add_argument('--headless')
     driver = webdriver.Chrome(service=service, options=options)
-    driver.get('https://qa-scooter.praktikum-services.ru/')
     yield driver
     driver.quit()
