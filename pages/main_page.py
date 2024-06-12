@@ -13,10 +13,8 @@ class MainPage(BasePage):
         self.click_to_element(locator_1_formatted)
         return self.get_text_from_element(locator_2_formatted)
 
-    @allure.step("Оформить заказ")
-    def set_order(self):
-        pass
-
-    @allure.step("Проверить заказ")
-    def check_order(self, ):
-        return self.get_text_from_element()
+    @allure.step("Перейти к форме оформления заказа")
+    def click_button_order(self):
+        element = self.driver.find_element(*MainPageLocators.BUTTON_ORDER_LOCATOR)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+        self.click_to_element(MainPageLocators.BUTTON_ORDER_LOCATOR)
