@@ -6,6 +6,9 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
 
+    def accept_cookie(self, locator):
+        self.click_to_element(locator)
+
     def find_element_with_wait(self, locator):
         WebDriverWait(self.driver, 3).until(ec.visibility_of_element_located(locator))
         return self.driver.find_element(*locator)

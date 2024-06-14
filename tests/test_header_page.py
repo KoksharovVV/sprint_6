@@ -1,6 +1,5 @@
-import time
-
 import pytest
+from selenium.webdriver.common.by import By
 from pages.header_page import HeaderPage
 from data import url
 
@@ -20,4 +19,4 @@ class TestHeaderPage:
         header_page = HeaderPage(driver)
         header_page.driver.get(page)
         header_page.transition_dzen()
-        assert header_page.get_current_url() == url["dzen_page"]
+        assert header_page.find_element_with_wait((By.XPATH, './/header[contains(@class, "desktop-base-header")]'))
