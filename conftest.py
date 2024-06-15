@@ -9,7 +9,6 @@ def driver():
     options = webdriver.ChromeOptions()
     service = Service(executable_path=ChromeDriverManager().install())
     options.add_argument('--window-size=1920,1080')
-    # options.add_argument('--headless')
     driver = webdriver.Chrome(service=service, options=options)
     yield driver
     driver.quit()

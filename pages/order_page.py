@@ -44,6 +44,7 @@ class OrderPage(BasePage):
         self.click_to_element(OrderPageLocators.BUTTON_YES_LOCATOR)
 
     @allure.step("Проверить заказ")
-    def check_order(self, ):
-        return self.get_text_from_element()
+    def check_order(self):
+        self.click_to_element(OrderPageLocators.BUTTON_ORDER_LOCATOR)
+        assert self.find_element_with_wait(OrderPageLocators.BUTTON_CANCEL_ORDER)
 

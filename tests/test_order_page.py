@@ -17,5 +17,5 @@ class TestOrderPage:
         order_page = OrderPage(driver)
         order_page.driver.get(url["main_page"])
         order_page.create_order(button_order)
-        time.sleep(3)
+        order_page.check_order()
 

@@ -18,3 +18,6 @@ class OrderPageLocators:
     COMMENT_LOCATOR = [By.XPATH, './/input[@placeholder="Комментарий для курьера"]']
     BUTTON_ORDER_LOCATOR = [By.XPATH, './/div[@class="Order_Buttons__1xGrp"]/*[text()="Заказать"]']
     BUTTON_YES_LOCATOR = [By.XPATH, './/*[text()="Да"]']
+    WINDOW_ORDER = [By.XPATH, './/*[text()="Заказ оформлен"]']
+    BUTTON_WATCH_STATUS = [By.XPATH, './/*[text()="Посмотреть статус"]']
+    BUTTON_CANCEL_ORDER = [By.XPATH, './/*[text()="Отменить заказ"]']
