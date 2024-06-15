@@ -1,10 +1,11 @@
+import allure
 import pytest
 from pages.main_page import MainPage
 from data import url
 
 
 class TestMainPage:
-
+    @allure.title("Проверка ответов на вопросы на главной странице")
     @pytest.mark.parametrize('num, res',
                              [
                                  [0, "Сутки — 400 рублей. Оплата курьеру — наличными или картой."],
