@@ -25,6 +25,17 @@ class BasePage:
     def get_current_url(self):
         return self.driver.current_url
 
+    def switch_browser_page(self):
+        handles = self.driver.window_handles
+        self.driver.switch_to.window(handles[-1])
+
+    def scroll_to_element(self, locator):
+        element = self.driver.find_element(*locator)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+
+    def open_page(self, page):
+        self.driver.get(page)
+
     def format_locators(self, locator_1, num):
         method, locator = locator_1
         locator = locator.format(num)

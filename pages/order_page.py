@@ -2,6 +2,7 @@ import allure
 from pages.base_page import BasePage
 from locators.order_page_locaters import OrderPageLocators
 from locators.main_page_locators import MainPageLocators
+from data import data_for_order
 
 
 class OrderPage(BasePage):
@@ -30,16 +31,16 @@ class OrderPage(BasePage):
     def create_order(self, button_order):
         self.accept_cookie(MainPageLocators.ACCEPT_COOKIE_LOCATOR)
         self.switch_page(button_order)
-        self.add_text_to_element(OrderPageLocators.INPUT_NAME_LOCATOR, "Имя")
-        self.add_text_to_element(OrderPageLocators.INPUT_SURNAME_LOCATOR, "Фамилия")
-        self.add_text_to_element(OrderPageLocators.INPUT_ADDRESS_LOCATOR, "Адрес")
+        self.add_text_to_element(OrderPageLocators.INPUT_NAME_LOCATOR, data_for_order["name"])
+        self.add_text_to_element(OrderPageLocators.INPUT_SURNAME_LOCATOR, data_for_order["surname"])
+        self.add_text_to_element(OrderPageLocators.INPUT_ADDRESS_LOCATOR, data_for_order["address"])
         self.choose_metro()
-        self.add_text_to_element(OrderPageLocators.INPUT_PHONE_LOCATOR, "89998882211")
+        self.add_text_to_element(OrderPageLocators.INPUT_PHONE_LOCATOR, data_for_order["phone"])
         self.click_to_element(OrderPageLocators.BUTTON_NEXT_LOCATOR)
         self.choose_data()
         self.choose_rental_period()
         self.click_to_element(OrderPageLocators.CHECKBOX_COLOR_LOCATOR)
-        self.add_text_to_element(OrderPageLocators.COMMENT_LOCATOR, "COMMENT")
+        self.add_text_to_element(OrderPageLocators.COMMENT_LOCATOR, data_for_order["comment"])
         self.click_to_element(OrderPageLocators.BUTTON_ORDER_LOCATOR)
         self.click_to_element(OrderPageLocators.BUTTON_YES_LOCATOR)
 

@@ -7,10 +7,8 @@ class HeaderPage(BasePage):
     @allure.step("Клик на логотип яндекса")
     def transition_dzen(self):
         self.click_to_element(HeaderPageLocators.YANDEX_LOGO_LOCATORS)
-        handles = self.driver.window_handles
-        self.driver.switch_to.window(handles[-1])
+        self.switch_browser_page()
 
     @allure.step("Клик на логотип сервиса")
     def transition_main_page(self):
         self.click_to_element(HeaderPageLocators.SCOOTER_LOGO_LOCATORS)
-

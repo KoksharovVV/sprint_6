@@ -1,6 +1,13 @@
 ORDER_INFO_DICT = {
 
 }
+data_for_order = {
+    "name": "Имя",
+    "surname": "Фамилия",
+    "address": "Адрес",
+    "phone": "89998882211",
+    "comment": "COMMENT"
+}
 
 url = {
     "main_page": "https://qa-scooter.praktikum-services.ru/",

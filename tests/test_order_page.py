@@ -16,6 +16,6 @@ class TestOrderPage:
     ])
     def test_create_order(self, driver, button_order):
         order_page = OrderPage(driver)
-        order_page.driver.get(url["main_page"])
+        order_page.open_page(url["main_page"])
         order_page.create_order(button_order)
         order_page.check_order()
